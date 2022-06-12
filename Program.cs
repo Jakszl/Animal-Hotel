@@ -18,16 +18,11 @@ namespace AnimalHotel
             rabbit.Name = "Ferdek";
 
 
-            Timer t = new Timer(DayTimer, null, 0, 20);
-
-            DayTimer();
+            
 
 
         }
 
-        private static void DayTimer(Object o)
-        {
-            Console.WriteLine("Timer: "+DateTime.Now);
-        }
+        
     }
 }
