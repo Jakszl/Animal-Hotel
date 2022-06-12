@@ -3,11 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Threading;
 
 namespace AnimalHotel
 {
-    internal interface ICheckType
+    internal class Game
     {
-        public virtual bool CheckType(string type) { return true; }
+        List<Animal> animals;
+
+
     }
 }

@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace AnimalHotel
 {
-    internal class Cat : Animal, IActions
+    internal class Rabbit : Animal, IActions
     {
-        public Cat() { }
+        public Rabbit() { }
 
         public override string GetInfo(Animal animal)
         {
@@ -19,12 +19,12 @@ namespace AnimalHotel
         public override void Feed(string foodType)
         {
 
-            if (foodType == "catfood")
+            if (foodType == "rabbitfood")
             {
                 hunger.Level = 100;
                 this.hunger.Feed(foodType);
             }
-            else if (foodType == "dogfood")
+            else if (foodType == "catfood")
             {
                 if (hunger.Level >= 30)
                 {
@@ -37,7 +37,7 @@ namespace AnimalHotel
                     this.hunger.Feed(foodType);
                 }
             }
-            else if (foodType == "rabbitfood")
+            else if (foodType == "dogfood")
             {
                 if (hunger.Level >= 70)
                 {
@@ -55,21 +55,21 @@ namespace AnimalHotel
         public override void GiveDrink(string drinkType)
         {
 
-            if (drinkType == "milk")
+            if (drinkType == "water")
             {
                 thirst.Level = 100;
                 this.thirst.GiveDrink(drinkType);
             }
-            else if (drinkType == "water")
+            else if (drinkType == "milk")
             {
-                if (thirst.Level >= 30)
+                if (thirst.Level >= 70)
                 {
                     thirst.Level = 100;
                     this.thirst.GiveDrink(drinkType);
                 }
                 else
                 {
-                    thirst.Level += 70;
+                    thirst.Level += 30;
                     this.thirst.GiveDrink(drinkType);
                 }
             }
@@ -78,10 +78,23 @@ namespace AnimalHotel
         public override void Play(string toyType)
         {
 
-            if (toyType == "ball")
+            if (toyType == "rabbitsteether")
             {
                 happiness.Level = 100;
                 this.happiness.Play(toyType);
+            }
+            else if (toyType == "ball")
+            {
+                if (happiness.Level >= 30)
+                {
+                    happiness.Level = 100;
+                    this.happiness.Play(toyType);
+                }
+                else
+                {
+                    happiness.Level += 70;
+                    this.happiness.Play(toyType);
+                }
             }
             else if (toyType == "bone")
             {
@@ -93,19 +106,6 @@ namespace AnimalHotel
                 else
                 {
                     happiness.Level += 30;
-                    this.happiness.Play(toyType);
-                }
-            }
-            else if (toyType == "rabbitsteether")
-            {
-                if (happiness.Level >= 30)
-                {
-                    happiness.Level = 100;
-                    this.happiness.Play(toyType);
-                }
-                else
-                {
-                    happiness.Level += 70;
                     this.happiness.Play(toyType);
                 }
             }

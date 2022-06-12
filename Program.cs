@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading;
 
 namespace AnimalHotel
 {
@@ -11,21 +12,22 @@ namespace AnimalHotel
 
             var dog = new Dog();
             var cat = new Cat();
+            var rabbit = new Rabbit();
             dog.Name = "Azor";
             cat.Name = "Kicia";
+            rabbit.Name = "Ferdek";
 
-            //dog.hunger.Feed("karm");
-            //dog.GiveDrink("wate");
 
-            
-            Console.WriteLine(cat.GetInfo(cat));
+            Timer t = new Timer(DayTimer, null, 0, 20);
 
-            cat.GiveDrink("water");
-            Console.WriteLine(cat.GetInfo(cat));
-            cat.GiveDrink("water");
-            Console.WriteLine(cat.GetInfo(cat));
-            cat.GiveDrink("water");
+            DayTimer();
 
+
+        }
+
+        private static void DayTimer(Object o)
+        {
+            Console.WriteLine("Timer: "+DateTime.Now);
         }
     }
 }

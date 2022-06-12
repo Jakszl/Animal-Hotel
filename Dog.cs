@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AnimalHotel
 {
-    internal class Dog : Animal
+    internal class Dog : Animal, IActions
     {
 
         public Dog() { }
@@ -23,14 +23,33 @@ namespace AnimalHotel
             if (foodType == "dogfood")
             {
                 hunger.Level = 100;
-                this.hunger.Feed(foodType);
-                //this.hunger.TransitionTo(new Full());
+                this.hunger.Feed(foodType);               
             }
             else if (foodType == "catfood")
             {
-                hunger.Level += 70;
-                this.hunger.Feed(foodType);
-                //this.hunger.TransitionTo(new Full());
+                if (hunger.Level >= 30) 
+                { 
+                    hunger.Level = 100;
+                    this.hunger.Feed(foodType);
+                }
+                else 
+                {
+                    hunger.Level += 70;
+                    this.hunger.Feed(foodType);
+                }    
+            }
+            else if (foodType == "rabbitfood")
+            {
+                if (hunger.Level >= 70)
+                {
+                    hunger.Level = 100;
+                    this.hunger.Feed(foodType);
+                }
+                else
+                {
+                    hunger.Level += 30;
+                    this.hunger.Feed(foodType);
+                }
             }
         }
 
@@ -41,13 +60,19 @@ namespace AnimalHotel
             {
                 thirst.Level = 100;
                 this.thirst.GiveDrink(drinkType);
-                //this.thirst.TransitionTo(new NotThirsty());
             }
             else if (drinkType == "milk")
             {
-                thirst.Level += 70;
-                this.thirst.GiveDrink(drinkType);
-                //this.thirst.TransitionTo(new NotThirsty());
+                if(thirst.Level >= 30) 
+                { 
+                    thirst.Level = 100;
+                    this.thirst.GiveDrink(drinkType);
+                }
+                else
+                {
+                    thirst.Level += 70;
+                    this.thirst.GiveDrink(drinkType);
+                }
             }
         }
 
@@ -58,13 +83,32 @@ namespace AnimalHotel
             {
                 happiness.Level = 100;
                 this.happiness.Play(toyType);
-                //this.happiness.TransitionTo(new Happy());
             }
             else if (toyType == "ball")
             {
-                happiness.Level += 70;
-                this.happiness.Play(toyType);
-                //this.happiness.TransitionTo(new Happy());
+                if(happiness.Level >= 30) 
+                { 
+                    happiness.Level = 100;
+                    this.happiness.Play(toyType);
+                }
+                else
+                {
+                    happiness.Level += 70;
+                    this.happiness.Play(toyType);
+                }
+            }
+            else if (toyType == "rabbitsteether")
+            {
+                if (happiness.Level >= 70)
+                {
+                    happiness.Level = 100;
+                    this.happiness.Play(toyType);
+                }
+                else
+                {
+                    happiness.Level += 30;
+                    this.happiness.Play(toyType);
+                }
             }
         }
 

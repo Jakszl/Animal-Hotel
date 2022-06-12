@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AnimalHotel
 {
-    internal abstract class Animal
+    internal class Animal : IActions
     {
         
         public Hunger hunger = new Hunger(new Hungry());
@@ -15,11 +15,38 @@ namespace AnimalHotel
         public Housing housing = new Housing(new Dirty());
 
         public string Name { get; set; }
-        public abstract string GetInfo(Animal animal);
 
+        public virtual void Clear()
+        {
+            throw new NotImplementedException();
+        }
+
+        public virtual void Feed(string foodType)
+        {
+            throw new NotImplementedException();
+        }
+
+        public virtual string GetInfo(Animal animal)
+        {
+            throw new NotImplementedException();
+        }
+
+        public virtual void GiveDrink(string drinkType)
+        {
+            throw new NotImplementedException();
+        }
+
+        public virtual void Play(string toyType)
+        {
+            throw new NotImplementedException();
+        }
+        /*
+
+        public abstract string GetInfo(Animal animal);
         public abstract void Feed(string foodType);
         public abstract void GiveDrink(string drinkType);
         public abstract void Play(string toyType);
         public abstract void Clear();
+        */
     }
 }
