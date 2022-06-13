@@ -30,27 +30,27 @@ namespace AnimalHotel
             }
             else if (foodType == "dogfood")
             {
-                if (hunger.Level >= 30)
+                if (hunger.Level >= 50)
                 {
                     hunger.Level = 100;
                     this.hunger.Feed(foodType);
                 }
                 else
                 {
-                    hunger.Level += 70;
+                    hunger.Level += 50;
                     this.hunger.Feed(foodType);
                 }
             }
             else if (foodType == "rabbitfood")
             {
-                if (hunger.Level >= 70)
+                if (hunger.Level >= 80)
                 {
                     hunger.Level = 100;
                     this.hunger.Feed(foodType);
                 }
                 else
                 {
-                    hunger.Level += 30;
+                    hunger.Level += 20;
                     this.hunger.Feed(foodType);
                 }
             }
@@ -89,27 +89,27 @@ namespace AnimalHotel
             }
             else if (toyType == "bone")
             {
-                if (happiness.Level >= 70)
+                if (happiness.Level >= 90)
                 {
                     happiness.Level = 100;
                     this.happiness.Play(toyType);
                 }
                 else
                 {
-                    happiness.Level += 30;
+                    happiness.Level += 10;
                     this.happiness.Play(toyType);
                 }
             }
             else if (toyType == "rabbitsteether")
             {
-                if (happiness.Level >= 30)
+                if (happiness.Level >= 50)
                 {
                     happiness.Level = 100;
                     this.happiness.Play(toyType);
                 }
                 else
                 {
-                    happiness.Level += 70;
+                    happiness.Level += 50;
                     this.happiness.Play(toyType);
                 }
             }

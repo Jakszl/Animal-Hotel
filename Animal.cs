@@ -41,13 +41,5 @@ namespace AnimalHotel
         {
             throw new NotImplementedException();
         }
-        /*
-
-        public abstract string GetInfo(Animal animal);
-        public abstract void Feed(string foodType);
-        public abstract void GiveDrink(string drinkType);
-        public abstract void Play(string toyType);
-        public abstract void Clear();
-        */
     }
 }

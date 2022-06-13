@@ -31,27 +31,27 @@ namespace AnimalHotel
             }
             else if (foodType == "catfood")
             {
-                if (hunger.Level >= 30) 
+                if (hunger.Level >= 50) 
                 { 
                     hunger.Level = 100;
                     this.hunger.Feed(foodType);
                 }
                 else 
                 {
-                    hunger.Level += 70;
+                    hunger.Level += 50;
                     this.hunger.Feed(foodType);
                 }    
             }
             else if (foodType == "rabbitfood")
             {
-                if (hunger.Level >= 70)
+                if (hunger.Level >= 90)
                 {
                     hunger.Level = 100;
                     this.hunger.Feed(foodType);
                 }
                 else
                 {
-                    hunger.Level += 30;
+                    hunger.Level += 10;
                     this.hunger.Feed(foodType);
                 }
             }
@@ -67,14 +67,14 @@ namespace AnimalHotel
             }
             else if (drinkType == "milk")
             {
-                if(thirst.Level >= 30) 
+                if(thirst.Level >= 70) 
                 { 
                     thirst.Level = 100;
                     this.thirst.GiveDrink(drinkType);
                 }
                 else
                 {
-                    thirst.Level += 70;
+                    thirst.Level += 30;
                     this.thirst.GiveDrink(drinkType);
                 }
             }

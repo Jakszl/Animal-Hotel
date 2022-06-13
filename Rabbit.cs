@@ -30,19 +30,6 @@ namespace AnimalHotel
             }
             else if (foodType == "catfood")
             {
-                if (hunger.Level >= 30)
-                {
-                    hunger.Level = 100;
-                    this.hunger.Feed(foodType);
-                }
-                else
-                {
-                    hunger.Level += 70;
-                    this.hunger.Feed(foodType);
-                }
-            }
-            else if (foodType == "dogfood")
-            {
                 if (hunger.Level >= 70)
                 {
                     hunger.Level = 100;
@@ -51,6 +38,19 @@ namespace AnimalHotel
                 else
                 {
                     hunger.Level += 30;
+                    this.hunger.Feed(foodType);
+                }
+            }
+            else if (foodType == "dogfood")
+            {
+                if (hunger.Level >= 90)
+                {
+                    hunger.Level = 100;
+                    this.hunger.Feed(foodType);
+                }
+                else
+                {
+                    hunger.Level += 10;
                     this.hunger.Feed(foodType);
                 }
             }
@@ -66,14 +66,14 @@ namespace AnimalHotel
             }
             else if (drinkType == "milk")
             {
-                if (thirst.Level >= 70)
+                if (thirst.Level >= 90)
                 {
                     thirst.Level = 100;
                     this.thirst.GiveDrink(drinkType);
                 }
                 else
                 {
-                    thirst.Level += 30;
+                    thirst.Level += 10;
                     this.thirst.GiveDrink(drinkType);
                 }
             }
@@ -102,14 +102,14 @@ namespace AnimalHotel
             }
             else if (toyType == "bone")
             {
-                if (happiness.Level >= 70)
+                if (happiness.Level >= 90)
                 {
                     happiness.Level = 100;
                     this.happiness.Play(toyType);
                 }
                 else
                 {
-                    happiness.Level += 30;
+                    happiness.Level += 10;
                     this.happiness.Play(toyType);
                 }
             }

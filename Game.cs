@@ -10,16 +10,11 @@ namespace AnimalHotel
 {
     internal class Game
     {
-
         private Functions functions = new Functions();
-        //private bool afterDay = false;
         private int dayCount = 0;
         private bool allPetsAlive = true;
-        //private int maxDays = 3;
-        //private int maxTime = 60000;
-
-        
-
+        private string reasonOfFailure = "";
+          
         public string NextDay(List<Animal> pets)
         {
             Console.WriteLine("\n         Day has ended! Prepare for next day!");
@@ -47,13 +42,25 @@ namespace AnimalHotel
             foreach(var animal in pets)
             {
                 if (animal.hunger.Level <= 0)
+                {
+                    reasonOfFailure = animal.Name + " has starved to death";
                     allPetsAlive = false;
-                if (animal.thirst.Level <= 0)
+                }   
+                else if (animal.thirst.Level <= 0)
+                {
+                    reasonOfFailure = animal.Name + " died of thirst";
                     allPetsAlive = false;
-                if (animal.happiness.Level <= 0)
+                }
+                else if (animal.happiness.Level <= 0)
+                {
+                    reasonOfFailure = animal.Name + " has escaped due to low happiness level";
                     allPetsAlive = false;
-                if (animal.housing.Cleanliness <= 0)
+                }
+                else if (animal.housing.Cleanliness <= 0)
+                {
+                    reasonOfFailure = animal.Name + " has escaped due to bad housing condition";
                     allPetsAlive = false;
+                }
             }
             return allPetsAlive;
         }
@@ -85,7 +92,7 @@ namespace AnimalHotel
                 case '1':
                     var dog = new Dog("Ares", "Dog");
                     pets.Add(dog);
-                    functions.MaxTime = 30000;
+                    functions.MaxTime = 20000;
                     functions.MaxDays = 3;
                     break;
                 case '2':
@@ -93,7 +100,7 @@ namespace AnimalHotel
                     var cat1 = new Cat("Kicia", "Cat");
                     pets.Add(dog1);
                     pets.Add(cat1);
-                    functions.MaxTime = 60000;
+                    functions.MaxTime = 50000;
                     functions.MaxDays = 4;
                     break;
                 case '3':
@@ -103,7 +110,7 @@ namespace AnimalHotel
                     pets.Add(dog3);
                     pets.Add(cat3);
                     pets.Add(rabbit2);
-                    functions.MaxTime = 90000;
+                    functions.MaxTime = 70000;
                     functions.MaxDays = 5;
                     break;
             }
@@ -131,7 +138,7 @@ namespace AnimalHotel
                 DateTime end = DateTime.Now;
                 while (!functions.CheckTime(start, end, ts))
                 {
-                    Console.WriteLine("\nChoose your what do you want to do: ");
+                    Console.WriteLine("\nChoose what you want to do: ");
                     Console.WriteLine("1 -- Feed");
                     Console.WriteLine("2 -- Give drink");
                     Console.WriteLine("3 -- Play");
@@ -255,12 +262,13 @@ namespace AnimalHotel
 
             if(dayCount == functions.MaxDays)
             {
-                Console.WriteLine("\n ************************You have won!************************");
+                Console.WriteLine("\n ************************  You have won!  ************************");
                 Console.WriteLine("Congratulations you managed to take care of your animals!");
             }
             else
             {
-                Console.WriteLine("\n ************************You have lost!************************");
+                Console.WriteLine("\n ************************  You have lost!  ************************");
+                Console.WriteLine("\t\t" + reasonOfFailure);
                 Console.WriteLine("Unfortunately you didn't managed to take care of your animals!");
             } 
         }
