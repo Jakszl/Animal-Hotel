@@ -8,11 +8,15 @@ namespace AnimalHotel
 {
     internal class Rabbit : Animal, IActions
     {
-        public Rabbit() { }
+        public Rabbit(string aName, string aType) 
+        {
+            Name = aName;
+            Type = aType;
+        }
 
         public override string GetInfo(Animal animal)
         {
-            return animal.Name + " --- Hunger level: " + hunger.Level + "  Thirst level: " + thirst.Level + "  Happines level: " + happiness.Level +
+            return animal.Name + " " + animal.Type + " --- Hunger level: " + hunger.Level + "  Thirst level: " + thirst.Level + "  Happines level: " + happiness.Level +
                 "  Housing cleanliness: " + housing.Cleanliness;
         }
 

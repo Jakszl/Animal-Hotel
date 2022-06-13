@@ -15,6 +15,7 @@ namespace AnimalHotel
         public Housing housing = new Housing(new Dirty());
 
         public string Name { get; set; }
+        public string Type { get; set; }
 
         public virtual void Clear()
         {
