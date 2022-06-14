@@ -11,11 +11,7 @@ At the beginning, you have to choose difficult level:
 
 There are different types of food, drinks and toys. Types of them are listed below in table with appropriate effects to different animal types.
 
-**Animal Type**	     **Food types**	            **Drink types**	           **Toy types**
-	              dogfood	catfood	rabbitfood	     water 	milk	      bone	  ball	  rabbitsteether
-Dog	              Max	    +50	     +10	          Max	  +30	        Max	    +70	         +30
-Cat	              +50	    Max	     +20	          +70	  Max	        +10    	Max	         +50
-Rabbit	          +10	    +30	     Max	          Max	  +10	        +10	    +70	          Max
+![table](https://user-images.githubusercontent.com/56104691/173674911-190771f0-5651-40db-9b9e-4de89a39ced1.png)
 
 Clearing housing always sets housing cleanliness at maximum level, which is 100.
-If at the end of the day any animal ha sany statistic at level = 0, player loses game and game display reason of failure.
+If at the end of the day any animal has any statistic at level = 0, player loses game and game display reason of failure.
